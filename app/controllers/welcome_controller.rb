@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
+    authorize! :index, WelcomeController
     @users =User.all
   end
 

@@ -5,12 +5,17 @@ class UsersController < ApplicationController
 		@user = User.all
 	end
 
-	def show;end
+	def show
+		authorize! :show, @user
+	end
 
-	def edit;end
+	def edit
+		authorize! :edit, @user
+	end
 
 	def update
 		if @user.update(user_params)
+			authorize! :update, @user
 			redirect_to @user
 		else
 			render 'edit'
@@ -19,6 +24,7 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
+		authorize! :destroy, @user
     @user.destroy
     redirect_to users_path, notice: 'User was successfully deleted.'
   end
