@@ -20,6 +20,12 @@
 
           </br>
 
+          <% if current_user.admin? %>
+            <%= f.label :role_ids, "Roles" %>
+            <%= f.collection_check_boxes(:role_ids, Role.all, :id, :name) %>
+            <br>
+          <% end %>
+
           <div class="field">
             <%= f.label :password %><br />
             <%= f.password_field :password, autocomplete: 'new-password', class: "form-control" %>
