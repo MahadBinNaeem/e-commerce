@@ -21,9 +21,11 @@
           </br>
 
           <% if current_user.admin? %>
+          <div>
             <%= f.label :role_ids, "Roles" %>
             <%= f.collection_check_boxes(:role_ids, Role.all, :id, :name) %>
-            <br>
+          </div>
+          </br>
           <% end %>
 
           <div class="field">
