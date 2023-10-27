@@ -13,7 +13,6 @@ class Ability
     can :update, User
     can :destroy, User
     can :show, Users::ConfirmationsController
-
   end
 
 end
