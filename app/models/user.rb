@@ -5,7 +5,9 @@ class User < ApplicationRecord
   has_many :user_roles
   has_many :roles, through: :user_roles
 
+  attribute :role, :string
   PASSWORD_REGEX=/^(?=.*[!@#\$%\^&*])[A-Za-z\d!@#\$%\^&*]{8,20}$/
+
   validate :password_complexity
 
   def password_complexity
@@ -14,8 +16,16 @@ class User < ApplicationRecord
     end
   end
 
-  def admin?
-    roles.exists?(name: 'admin')
+  def customer?
+    self.roles.exists?(name: 'customer')
   end
 
+  def staff?
+    self.roles.exists?(name: 'staff')
+  end
+
+  def admin?
+    self.roles.exists?(name: 'admin')
+  end
+  
 end
