@@ -21,7 +21,6 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-		@user.user_roles.destroy_all
     @user.destroy
     redirect_to users_path, notice: 'User was successfully deleted.'
   end
