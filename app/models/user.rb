@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  PASSWORD_REGEX=/^(?=.*[!@#\$%\^&*])[A-Za-z\d!@#\$%\^&*]{8,20}$/
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
@@ -6,7 +8,6 @@ class User < ApplicationRecord
   has_many :roles, through: :user_roles
 
   attribute :role, :string
-  PASSWORD_REGEX=/^(?=.*[!@#\$%\^&*])[A-Za-z\d!@#\$%\^&*]{8,20}$/
 
   validate :password_complexity
 
