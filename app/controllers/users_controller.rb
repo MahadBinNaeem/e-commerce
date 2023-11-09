@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	def show;end
 
 	def edit
-		@roles=Role.all
+		@roles = Role.all
 	end
 
 	def update
@@ -17,7 +17,6 @@ class UsersController < ApplicationController
 		else
 			render 'edit'
 		end
-
 	end
 
 	def destroy
