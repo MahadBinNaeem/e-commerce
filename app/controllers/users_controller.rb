@@ -7,7 +7,9 @@ class UsersController < ApplicationController
 
 	def show;end
 
-	def edit;end
+	def edit
+		@roles=Role.all
+	end
 
 	def update
 		if @user.update(user_params)
@@ -26,7 +28,7 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:name,:email,:password,:password_confirmation)
+		params.require(:user).permit(:name, :email, :password, :password_confirmation, role_ids: [])
 	end
 
 	def set_user

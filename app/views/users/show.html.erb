@@ -6,7 +6,17 @@
 			
 			<br>
 
-			<h3><span class="label">Email	:</span> <%= @user.email %></h3>
+			<h3><span class="label">Email:</span> <%= @user.email %></h3>
+
+			<br>
+
+			<h3><span class="label">Roles:</span>
+			  <ul>
+			    <% @user.roles.each do |role| %>
+			      <li><%= role.name %></li>
+			    <% end %>
+			  </ul>
+			</h3>
 				
 			<br>
 				
