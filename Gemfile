@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.2.0"
+gem 'rails', '~> 7.2.0'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -13,7 +13,7 @@ gem 'sprockets-rails'
 gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 5.0'
+gem 'puma', '>= 6.4.3'
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem 'jsbundling-rails'
@@ -80,4 +80,10 @@ end
 
 gem 'devise'
 gem 'letter_opener'
+gem 'nokogiri', '>= 1.18.9'
+gem 'rack', '>= 2.2.14'
+gem 'rails-html-sanitizer', '>= 1.6.1'
+gem 'rdoc', '>= 6.5.1.1'
+gem 'rexml', '>= 3.3.9'
 gem 'sassc-rails'
+gem 'thor', '>= 1.4.0'
